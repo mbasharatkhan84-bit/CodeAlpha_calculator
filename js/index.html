@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator | CodeAlpha Task 2</title>
+  <meta name="description" content="A clean, keyboard-friendly calculator built with HTML, CSS, and JavaScript." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand__mark">+</span><span>Calcspace</span></div>
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav__item nav__item--active" href="#calculator"><i class="fa-solid fa-calculator"></i> Calculator</a>
+        <a class="nav__item" href="#activity"><i class="fa-solid fa-clock-rotate-left"></i> Activity</a>
+      </nav>
+      <div class="sidebar__footer"><span class="status-dot"></span> Local workspace</div>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar">
+        <div><p class="eyebrow">Workspace / Tools</p><h1>Calculator</h1></div>
+        <button class="avatar" aria-label="Account">BS</button>
+      </header>
+
+      <div class="workspace__grid">
+        <div class="calculator-column">
+          <div class="calculator" id="calculator">
+            <div class="calculator__header">
+              <div><span class="calculator__title">Standard</span><span class="calculator__subtitle">Quick calculations</span></div>
+              <span class="calculator__hint"><i class="fa-regular fa-keyboard"></i> Keyboard</span>
+            </div>
+
+            <div class="display" id="display">
+              <div class="display__label">Current calculation</div>
+              <div class="display__expression" id="expression" aria-hidden="true">&nbsp;</div>
+              <div class="display__result" id="result" aria-live="polite">0</div>
+            </div>
+
+            <div class="keys" id="keys">
+        <button class="key key--util" data-action="clear">AC</button>
+        <button class="key key--util" data-action="backspace" aria-label="Backspace">
+          <i class="fa-solid fa-delete-left"></i>
+        </button>
+        <button class="key key--util" data-action="percent">%</button>
+        <button class="key key--op" data-action="operator" data-op="÷">÷</button>
+
+        <button class="key key--num" data-num="7">7</button>
+        <button class="key key--num" data-num="8">8</button>
+        <button class="key key--num" data-num="9">9</button>
+        <button class="key key--op" data-action="operator" data-op="×">×</button>
+
+        <button class="key key--num" data-num="4">4</button>
+        <button class="key key--num" data-num="5">5</button>
+        <button class="key key--num" data-num="6">6</button>
+        <button class="key key--op" data-action="operator" data-op="−">−</button>
+
+        <button class="key key--num" data-num="1">1</button>
+        <button class="key key--num" data-num="2">2</button>
+        <button class="key key--num" data-num="3">3</button>
+        <button class="key key--op" data-action="operator" data-op="+">+</button>
+
+        <button class="key key--num key--zero" data-num="0">0</button>
+        <button class="key key--num" data-action="decimal">.</button>
+        <button class="key key--equals" data-action="equals" aria-label="Equals">
+          <i class="fa-solid fa-equals"></i>
+        </button>
+            </div>
+          </div>
+          <div class="tip"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Tip: use your keyboard for faster calculations</span></div>
+        </div>
+
+        <aside class="activity" id="activity">
+          <div class="activity__heading"><div><p class="eyebrow">Your workspace</p><h2>Activity</h2></div><span class="activity__count">0</span></div>
+          <div class="activity__empty"><span class="empty-icon"><i class="fa-solid fa-chart-simple"></i></span><strong>No calculations yet</strong><span>Your completed calculations will appear here.</span></div>
+          <div class="activity__note"><i class="fa-solid fa-shield-halved"></i><span>Everything stays in your browser.</span></div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
